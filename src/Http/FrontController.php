@@ -58,7 +58,7 @@ class FrontController
 
             return new Response(
                 $symfonyResponse->getStatusCode(),
-                $symfonyResponse->headers->all(),
+                ['x-powered-by' => 'Owl-Broker'] + $symfonyResponse->headers->all(),
                 $symfonyResponse->getContent()
             );
 

@@ -1,0 +1,64 @@
+{
+  "name": "noFlash/owl",
+  "description": "",
+  "type": "project",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "require": {
+    "php": "^7.2.0",
+    "cboden/ratchet": "dev-master",
+    "react/http": "dev-master",
+    "symfony/console": "^4.1",
+    "symfony/expression-language": "^4.1",
+    "symfony/flex": "^1.0",
+    "symfony/framework-bundle": "^4.1",
+    "symfony/messenger": "^4.1",
+    "symfony/monolog-bundle": "^3.0@dev",
+    "symfony/psr-http-message-bridge": "^1.0@dev",
+    "symfony/serializer-pack": "dev-master",
+    "symfony/twig-bundle": "^4.1",
+    "symfony/yaml": "^4.1"
+  },
+  "require-dev": {
+    "symfony/css-selector": "^4.1",
+    "symfony/debug-pack": "*",
+    "symfony/dotenv": "^4.1",
+    "symfony/maker-bundle": "^1.0",
+    "symfony/phpunit-bridge": "^4.1",
+    "symfony/profiler-pack": "*",
+    "symfony/web-server-bundle": "^4.1"
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "noFlash\\Owl\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "noFlash\\Owl\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "auto-scripts": {
+      "cache:clear": "symfony-cmd",
+      "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+    },
+    "post-install-cmd": [
+      "@auto-scripts"
+    ],
+    "post-update-cmd": [
+      "@auto-scripts"
+    ]
+  },
+  "extra": {
+    "symfony": {
+      "allow-contrib": false
+    }
+  }
+}
